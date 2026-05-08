@@ -16,7 +16,11 @@ order by category_name ,list_price ASC
 
 -- Q3
 -- Show all orders with the customer's full name and order date. Sort by order date from newest to oldest.
-
+select
+	first_name + '' + last_name as full_name,
+from [sales].[customers]
+inner join [sales].[orders]
+on [sales].[customers].[customer_id]=[sales].[orders].[customer_id]
 
 -- Q4
 -- Display each order item with the product name, quantity, unit price, and a computed column called "Line Total" (quantity × list_price). Sort by order ID.
