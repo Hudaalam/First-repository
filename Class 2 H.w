@@ -1,6 +1,12 @@
 -- Q1
 -- Show all product names along with their brand name. Sort by brand name, then by product name alphabetically.
 
+select *
+From
+[production].[products]
+inner join production.brands 
+ON production.products.brand_id =production.brands.brand_id
+
 
 -- Q2
 -- List all products with their category name and list price. Sort by category name, then by price from cheapest to most expensive.
