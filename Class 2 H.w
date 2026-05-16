@@ -28,7 +28,14 @@ on [sales].[customers].[customer_id]=[sales].[orders].[customer_id]
 
 -- Q5
 -- Show each order along with the store name where it was placed and the order date. Sort by store name.
-
+select
+[store_name],
+order_date
+from
+sales.stores
+inner join [sales].[orders]
+on [sales].[stores].store_id=[sales].[orders].store_id
+order by [store_name] ASC
 -- Q6
 -- Show each order with: order ID, customer full name, store name, and the staff member's full name who handled it.
 
